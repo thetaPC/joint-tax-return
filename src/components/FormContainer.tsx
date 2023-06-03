@@ -25,7 +25,8 @@ const FormContainer: FC<ContainerProps> = () => {
   const [personATotalRefundRounded, setPersonATotalRefundRounded] = useState(0);
   const [personBTotalRefundRounded, setPersonBTotalRefundRounded] = useState(0);
 
-  
+  const [totalRefund, setTotalRefund] = useState(0);
+  const [totalRefundRounded, setTotalRefundRounded] = useState(0);
 
   const calculate = (event: any) => {
     event.preventDefault();
@@ -45,6 +46,9 @@ const FormContainer: FC<ContainerProps> = () => {
     const personARefundRounded = Math.round(personARefund * 100) / 100;
     const personBRefundRounded = Math.round(personBRefund * 100) / 100;
 
+    const totalRefund = personARefund + personBRefund;
+    const totalRefundRounded = Math.round(totalRefund * 100) / 100;
+
     setTaxRate(rate);
 
     setPersonATotalOwed(personAOwed);
@@ -56,6 +60,9 @@ const FormContainer: FC<ContainerProps> = () => {
     setPersonBTotalRefund(personBRefund);
     setPersonATotalRefundRounded(personARefundRounded);
     setPersonBTotalRefundRounded(personBRefundRounded);
+
+    setTotalRefund(totalRefund);
+    setTotalRefundRounded(totalRefundRounded);
   };
 
   return (
@@ -156,6 +163,7 @@ const FormContainer: FC<ContainerProps> = () => {
       )}
       <p>{`Person A Total Refund: `}<b>{`$${personATotalRefundRounded}`}</b>{` (${personATotalRefund})`}</p>
       <p>{`Person B Total Refund: `}<b>{`$${personBTotalRefundRounded}`}</b>{` (${personBTotalRefund})`}</p>
+      <p>{`Total Refund: `}<b>{`$${totalRefundRounded}`}</b>{` (${totalRefund})`}</p>
     </>
   );
 };
