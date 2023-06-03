@@ -1,22 +1,27 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import React, { FC } from 'react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonText } from '@ionic/react';
+import FormContainer from '../components/FormContainer';
 import './Home.css';
 
-const Home: React.FC = () => {
+const Home: FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Blank</IonTitle>
+          <IonTitle>
+            <IonText>
+              <h1>Calculate Tax Refund Split</h1>
+            </IonText>
+          </IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent fullscreen class='ion-padding'>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
+            <IonTitle size="large">Calculate Tax Refund Split</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer />
+        <FormContainer />
       </IonContent>
     </IonPage>
   );
