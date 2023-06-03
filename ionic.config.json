@@ -1,0 +1,7 @@
+{
+  "name": "joint-tax-return",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
